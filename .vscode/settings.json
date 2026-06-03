@@ -1,0 +1,15 @@
+{
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.quickSuggestionsDelay": 1000,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "search.searchView.keywordSuggestions": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "github.copilot.nextEditSuggestions.extendedRange": true,
+    "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
+    "html.suggest.hideEndTagSuggestions": true,
+    "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onDoubleHash",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 18,
+    "editor.allowVariableFonts": false,
+    "editor.renderLineHighlight": "none"
+}

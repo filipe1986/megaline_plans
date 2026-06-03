@@ -1,0 +1,144 @@
+
+
+Project description
+You work as an analyst for the telecommunications company Megaline. The company offers customers two prepaid plans: Surf and Ultimate.
+The sales department wants to know which plan generates more revenue in order to adjust the advertising budget.
+
+You will conduct a preliminary analysis of the plans based on a small selection of customers. You will have data from 500 Megaline customers: who they are, where they are from, which plan they use, and the number of calls and messages made in 2018. Your job is to analyze customer behavior and determine which prepaid plan generates the most revenue. Later in the project instructions, you will see exactly which aspects of customer behavior you need to analyze. Determining which plan, on average, generates the most revenue is a task that can be solved using statistical tests. You will receive more information about this in the project instructions section.
+
+Description of the plans
+Note: Megaline rounds seconds to minutes and megabytes to gigabytes. For calls , each individual call is rounded up: even if a call lasted only one second, one minute will be counted. For web traffic , individual web sessions are not rounded up. Instead, the monthly total is rounded up. If someone uses 1,025 megabytes in a month, they will be charged for 2 gigabytes.
+
+Here is a description of the plans:
+
+Surf
+Monthly price: $20
+500 monthly minutes, 50 text messages, and 15 GB of data.
+After exceeding the package limits:
+1 minute: 3 cents
+1 text message: 3 cents
+1 GB of data: $10
+
+Ultimate
+Monthly price: $70
+3,000 monthly minutes, 1,000 text messages, and 30 GB of data.
+After exceeding the package limits:
+1 minute: 1 cent
+1 text message: 1 cent
+1 GB of data: $7
+
+Data dictionary
+In this project, you will work with five separate tables.
+
+Users:
+user_id — unique user identifier
+first_name — username
+last_name — user's last name
+age — user's age (in years)
+reg_date — registration date (dd, mm, yy)
+churn_date — the date the user stopped using the service (if the value is missing, it means the plan was in use when the database was extracted)
+city ​​— user's city of residence
+plan — plan name
+
+
+The table calls (data about the calls):
+ID — unique caller ID
+call_date — call date
+duration — call duration (in minutes)
+user_id — identifier of the user making the call
+
+
+The table messages(data about text messages):
+id — unique identifier of the text message
+message_date — date of the text message
+user_id — identifier of the user who sends the text message
+
+The table internet(data about web sessions):
+id — unique session identifier
+mb_used — volume of data used during the session (in megabytes)
+session_date — web session date
+user_id — user identifier
+
+The table plans(data about the plans):
+plan_name — plan name
+usd_monthly_fee — monthly price in US dollars
+minutes_included — monthly minutes package
+messages_included — monthly text message package
+mb_per_month_included — data package volume (in megabytes)
+usd_per_minute — price per minute after exceeding the package limit (for example, if the package includes 100 minutes, the first minute exceeding the limit will be charged).
+usd_per_message — price per text message after exceeding the package limit.
+usd_per_gb — price per extra gigabyte of data after exceeding the package limit (1 GB = 1,024 megabytes)
+
+Instructions for completing the project.
+We've prepared a notebook template for you. The notebook contains guidelines on what code to write and also for including explanations of the results throughout the process. To complete the project, you need to fill in each code cell in the template and edit the Markdown cells where it's necessary to explain the results.
+
+Be sure to include an introduction that briefly describes your objectives and a conclusion that provides a brief summary of the results.
+
+Step 1. Open the data file and study the general information.
+
+Below are the paths to the files to be read and links to download them, if necessary.
+
+ Download the dataset from /datasets/megaline_calls.csv
+
+ Download the dataset from /datasets/megaline_internet.csv
+
+ Download the dataset from /datasets/megaline_messages.csv
+
+ Download the dataset from /datasets/megaline_plans.csv
+
+ Download the dataset from /datasets/megaline_users.csv
+
+Step 2. Prepare the data.
+
+Convert the data to the required data types.
+Find and eliminate errors in the data. Be sure to explain what errors you found and how you eliminated them.
+
+For each user, find:
+
+The number of calls made and minutes used per month.
+The number of text messages sent per month.
+The volume of data per month
+The monthly revenue generated from each user. To do this, you need to:
+Subtract the free allowance from the total number of calls, text messages, and data;
+Multiply the result by the plan's value;
+Add the monthly price depending on the plan.
+
+Step 3. Analyze the data
+
+Describe the customer's behavior:
+
+Find out the minutes, text messages, and data volume that users of each plan need per month.
+Calculate the mean, variance, and standard deviation.
+Construct histograms. Describe the distributions.
+
+Step 4. Test the hypotheses.
+
+Average revenues for users of the Ultimate and Surf plans are different.
+The average revenue of users in the NY-NJ area differs from the revenue of users in other regions.
+You decide which alpha values ​​to use. Additionally, you need to explain:
+
+How did you formulate the alternative and null hypotheses?
+What criteria did you use to test the hypotheses and why?
+
+Step 5. Write a general conclusion.
+
+Format: Complete all tasks in Jupyter Notebook. Store all code in cells code and text explanations in cells markdown. Add titles and appropriate formatting as needed.
+
+How will my project be evaluated?
+We have developed some evaluation criteria for the project. Please read them carefully before you begin working.
+
+Here's what project reviewers will look for when evaluating your project:
+
+How do you explain the problems identified in the data?
+How do you prepare the data for analysis?
+What graphs did you make for the distributions?
+How do you interpret the resulting graphs?
+How do you calculate the standard deviation and variance?
+If you created alternative and null hypotheses
+What methods do you use to test hypotheses?
+If you interpret the results of your hypothesis tests
+If you interpret the results of your hypothesis tests
+The conclusions you drew
+If you leave comments at each step
+In the video below, we address some of the most common difficulties that can be encountered throughout the project.
+
